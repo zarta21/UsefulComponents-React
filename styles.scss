@@ -1,0 +1,124 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --body-background-color: #c1bfbc;
+    --text-color: #212121;
+    --sun-color: #f1c40f;
+    --moon-color: var(--body-background-colo);
+    --btn-color: #fff;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    background: var(--body-background-color);
+
+    .toggle {
+        .checkbox {
+            opacity: 0;
+            position: absolute;
+        }
+
+        .btn {
+            background-color: var(--btn-color);
+            border-radius: 3.125rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0.4rem;
+            position: relative;
+            height: 3rem;
+            width: 7rem;
+
+            .sun {
+                #star {
+                    position: absolute;
+                    top: 9px;
+                    left: 13px;
+                    width: 30px;
+                    height: 30px;
+                    background-color: var(--sun-color);
+                    transform: scale(.7);
+                    border-radius: 50%;
+                    transition: 0.3s ease top, 0.3s ease left, 0.3s ease transform, 0.3s ease background-color;
+                    z-index: 1;
+                }
+
+                #star-1 {
+                    position: relative;
+                }
+
+                #star-2 {
+                    position: absolute;
+                    transform: rotateZ(35deg);
+                }
+
+                .star {
+                    top: -4px;
+                    left: -6px;
+                    font-size: 3.5rem;
+                    line-height: 28px;
+                    color: var(--sun-color);
+                    transition: 0.3s ease color;
+                }
+            }
+
+            .moon {
+                position: absolute;
+                bottom: 10px;
+                right: 12px;
+                width: 30px;
+                height: 30px;
+                background-color: var(--moon-color);
+                border-radius: 50%;
+                transition: 0.15s ease-in-out bottom;
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    top: -4px;
+                    left: -6px;
+                    width: 25px;
+                    height: 25px;
+                    background-color: var(--moon-color);
+                    border-radius: 50%;
+                    transition: 0.15s ease background-color;
+                }
+            }
+        }
+
+        .active {
+            .sun {
+                #star {
+                    top: 1.5px;
+                    left: 62px;
+                    transform: scale(0.3);
+                }
+            }
+
+            .moon {
+                &:before {
+                    background-color: var(--btn-color);
+                }
+            }
+
+        }
+    }
+}
+
+.dark-mode {
+    --body-background-color: #121212;
+    --text-color: #c1bfbc;
+    --btn-color: #333;
+    --moon-color: #fff;
+    --sun-color: #ffdd90;
+}
