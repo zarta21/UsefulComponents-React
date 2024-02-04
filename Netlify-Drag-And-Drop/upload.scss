@@ -1,0 +1,243 @@
+.upload {
+    color: #fff;
+
+    a {       
+        text-decoration: none;
+        color: inherit;        
+    }
+
+    .z-idx {
+        position: relative;
+        z-index: 1;
+    }
+
+    .links {
+        display: flex;
+        gap: .5rem;
+        margin: 0;
+    }
+
+    .link1 {
+        border-bottom: .1px solid #707378;
+        transition: all .2s ease-in-out;
+
+        span {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        &:hover {
+            border-bottom:.3px solid #fff;
+        }
+    }
+
+    .message {
+        font-size: .875rem;
+        line-height: 1.5rem;
+        color: rgb(171, 181, 191);
+        text-align: start;
+        margin: 0;
+    }
+
+    p {
+        max-width: 42.5rem;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        width: 90%;
+        max-width: 1500px;
+        margin: 0 auto;
+        background-color: #12181f; 
+        padding: 1.5rem;       
+
+        .header {
+            position: relative;
+            text-align: start;
+
+            h2 {
+                font-size: 1.25rem;
+                line-height: 2rem;
+                font-weight: 600;
+                margin: 0;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                display: block;
+                bottom: -4px;
+                width: 100%;
+                height: 1px;
+                background-color: #707378;
+            }
+        }
+
+        .text {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 1rem 0;
+
+            &::before {
+                content: '';
+                position: absolute;
+                height: 100%;
+                left: -1.5rem;
+                right: -1.5rem;
+                top: 0;
+                pointer-events: none;
+                background-color: inherit;
+            }
+
+            .left {
+                display: flex;
+                flex-direction: column;
+
+                .link2 {
+                    border-radius: .375rem;
+                    background-color: rgb(21, 42, 25);
+
+                    span {
+                        font-size: .875rem;
+                        font-weight: 700;
+                        line-height: 1rem;
+                        color: rgb(147, 245, 165 / 1);
+                        padding: .3rem;
+
+                    }
+                }
+
+                .uploaded {
+                    border-bottom: none;
+
+                    span {
+                        font-weight: 500;
+                    }
+                }
+
+                .status-uploaded {
+                    background-color: rgb(51, 34, 19);
+
+                    span {
+                        color: rgb(252, 206, 111 / 1);
+                    }
+                }
+
+            }
+
+            .right {
+                display: flex;
+                flex-direction: column;
+            }
+
+            
+
+            .icon {
+                position: absolute;
+                right: 0;
+                
+                span {
+                    position: relative;
+
+                    svg {
+                        fill: #707378;
+                        width: 15px;
+                        height: 15px;
+                        transition: all .2s ease-in-out;
+                    }
+                }
+            }
+
+            &:hover {
+                background-color: #1b2128;
+
+                .icon {
+                    span {
+                        svg {
+                            fill: #fff;
+                        }
+                    }
+                }
+            }
+        }
+
+        .dropzone {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px dashed rgb(171, 181, 191);
+            border-radius: .5rem;
+            padding: 1.5rem;
+            text-align: center;
+            position: relative;
+
+            .dropzone-content {
+                color: rgb(171, 181, 191);
+                font-size: 1rem;
+
+                p {
+                    margin: 0;
+                }
+
+                .dropzone-message {
+                    display: flex;
+                    flex-direction: column;
+                    gap: .5rem;
+                }
+
+                .dropzone-browse {
+                    font-size: .875rem;
+                    font-weight: 500;
+                    margin-top: .5rem;
+
+                    label {
+                        cursor: pointer;
+                        -webkit-text-decoration: underline;
+                        text-decoration: underline;
+                        font-weight: 500;
+                        margin-left: .3rem;
+                        z-index: 2;
+                    }
+
+                    #dropzone-upload {
+                        position: absolute;
+                        opacity: 0;
+                        inset: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 740px) {
+    .upload {
+        .container {
+            .text {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+
+                .right {
+                    margin-right: 1.5rem;
+                    .links {
+                        .link1 {
+                            span {
+                                font-size: .875rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
